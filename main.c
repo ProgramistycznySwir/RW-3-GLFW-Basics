@@ -8,48 +8,60 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static const struct
+static struct
 {
     float x, y, z;
     float r, g, b;
-} vertices[36] =
+} vertices[48] =
 {
-    { -1.0f,-1.0f,-1.0f, 1.f, 0.f, 0.f },
-    { -1.0f,-1.0f, 1.0f, 0.f, 1.f, 0.f },
-    { -1.0f, 1.0f, 1.0f, 0.f, 0.f, 1.f },
-    {  1.0f, 1.0f,-1.0f, 0.f, 0.f, 0.2f },
-    { -1.0f,-1.0f,-1.0f, 0.f, 0.5f, 0.f },
-    { -1.0f, 1.0f,-1.0f, 0.4f, 0.f, 0.f },
-    {  1.0f,-1.0f, 1.0f, 0.6f, 0.2f, 0.f },
-    { -1.0f,-1.0f,-1.0f, 0.f, 0.f, 0.f },
-    { 1.0f,-1.0f,-1.0f, 1.f, 0.f, 0.f },
-    { 1.0f, 1.0f,-1.0f, 0.f, 1.f, 0.f },
-    { 1.0f,-1.0f,-1.0f, 0.f, 0.f, 1.f },
-    { -1.0f,-1.0f,-1.0f, 0.f, 0.f, 0.2f },
-    { -1.0f,-1.0f,-1.0f, 1.f, 0.f, 0.f },
-    { -1.0f, 1.0f, 1.0f, 0.f, 1.f, 0.f },
-    { -1.0f, 1.0f,-1.0f, 0.f, 0.f, 1.f },
-    { 1.0f,-1.0f, 1.0f, 0.f, 0.f, 0.2f },
-    { -1.0f,-1.0f, 1.0f, 0.f, 0.5f, 0.f },
-    { -1.0f,-1.0f,-1.0f, 0.4f, 0.f, 0.f },
-    { -1.0f, 1.0f, 1.0f, 0.6f, 0.2f, 0.f },
-    { -1.0f,-1.0f, 1.0f, 0.f, 0.f, 0.f },
-    { 1.0f,-1.0f, 1.0f, 1.f, 0.f, 0.f },
-    { 1.0f, 1.0f, 1.0f, 0.f, 1.f, 0.f },
-    { 1.0f,-1.0f,-1.0f, 0.f, 0.f, 1.f },
-    { 1.0f, 1.0f,-1.0f, 0.f, 0.f, 0.2f },
-    { 1.0f,-1.0f,-1.0f, 1.f, 0.f, 0.f },
-    {  1.0f, 1.0f, 1.0f, 0.f, 1.f, 0.f },
-    {  1.0f,-1.0f, 1.0f, 0.f, 0.f, 1.f },
-    { 1.0f, 1.0f, 1.0f, 0.f, 0.f, 0.2f },
-    { 1.0f, 1.0f,-1.0f, 0.f, 0.5f, 0.f },
-    { -1.0f, 1.0f,-1.0f, 0.4f, 0.f, 0.f },
-    { 1.0f, 1.0f, 1.0f, 0.6f, 0.2f, 0.f },
-    {  -1.0f, 1.0f,-1.0f, 0.f, 0.f, 0.f },
-    { -1.0f, 1.0f, 1.0f, 1.f, 0.f, 0.f },
-    { 1.0f, 1.0f, 1.0f, 0.f, 1.f, 0.f },
-    { -1.0f, 1.0f, 1.0f, 0.f, 0.f, 1.f },
-    { 1.0f,-1.0f, 1.0f, 0.f, 0.f, 0.2f }
+    {1.0f,-1.0f,0.0f,1.0f,1.0f,1.0f},
+    {1.0f,0.0f,0.0f,1.0f,1.0f,1.0f},
+    {0.0f,1.0f,0.0f,1.0f,1.0f,1.0f},
+    {-1.0f,-1.0f,0.0f,1.0f,1.0f,1.0f},
+    {1.0f,-1.0f,0.0f,1.0f,1.0f,1.0f},
+    {0.0f,1.0f,0.0f,1.0f,1.0f,1.0f},
+    {-1.0f,0.0f,0.0f,1.0f,1.0f,1.0f},
+    {-1.0f,-1.0f,0.0f,1.0f,1.0f,1.0f},
+    {0.0f,1.0f,0.0f,1.0f,1.0f,1.0f},
+    {0.0f,1.0f,1.0f,1.0f,0.0f,0.0f},
+    {1.0f,0.0f,0.0f,1.0f,0.0f,0.0f},
+    {0.0f,1.0f,0.0f,1.0f,0.0f,0.0f},
+    {1.0f,0.0f,1.0f,1.0f,0.0f,0.0f},
+    {0.0f,1.0f,1.0f,1.0f,0.0f,0.0f},
+    {1.0f,0.0f,0.0f,1.0f,0.0f,0.0f},
+    {1.0f,0.0f,1.0f,1.0f,0.5f,0.0f},
+    {1.0f,-1.0f,0.0f,1.0f,0.5f,0.0f},
+    {1.0f,0.0f,0.0f,1.0f,0.5f,0.0f},
+    {1.0f,-1.0f,1.0f,1.0f,0.5f,0.0f},
+    {1.0f,0.0f,1.0f,1.0f,0.5f,0.0f},
+    {1.0f,-1.0f,0.0f,1.0f,0.5f,0.0f},
+    {1.0f,-1.0f,1.0f,1.0f,1.0f,0.0f},
+    {-1.0f,-1.0f,0.0f,1.0f,1.0f,0.0f},
+    {1.0f,-1.0f,0.0f,1.0f,1.0f,0.0f},
+    {-1.0f,-1.0f,1.0f,1.0f,1.0f,0.0f},
+    {1.0f,-1.0f,1.0f,1.0f,1.0f,0.0f},
+    {-1.0f,-1.0f,0.0f,1.0f,1.0f,0.0f},
+    {-1.0f,-1.0f,1.0f,0.0f,1.0f,0.0f},
+    {-1.0f,0.0f,0.0f,0.0f,1.0f,0.0f},
+    {-1.0f,-1.0f,0.0f,0.0f,1.0f,0.0f},
+    {-1.0f,0.0f,1.0f,0.0f,1.0f,0.0f},
+    {-1.0f,-1.0f,1.0f,0.0f,1.0f,0.0f},
+    {-1.0f,0.0f,0.0f,0.0f,1.0f,0.0f},
+    {-1.0f,0.0f,1.0f,0.0f,0.5f,1.0f},
+    {0.0f,1.0f,0.0f,0.0f,0.5f,1.0f},
+    {-1.0f,0.0f,0.0f,0.0f,0.5f,1.0f},
+    {0.0f,1.0f,1.0f,0.0f,0.5f,1.0f},
+    {-1.0f,0.0f,1.0f,0.0f,0.5f,1.0f},
+    {0.0f,1.0f,0.0f,0.0f,0.5f,1.0f},
+    {0.0f,1.0f,1.0f,0.5f,0.0f,1.0f},
+    {1.0f,0.0f,1.0f,0.5f,0.0f,1.0f},
+    {1.0f,-1.0f,1.0f,0.5f,0.0f,1.0f},
+    {0.0f,1.0f,1.0f,0.5f,0.0f,1.0f},
+    {1.0f,-1.0f,1.0f,0.5f,0.0f,1.0f},
+    {-1.0f,-1.0f,1.0f,0.5f,0.0f,1.0f},
+    {0.0f,1.0f,1.0f,0.5f,0.0f,1.0f},
+    {-1.0f,-1.0f,1.0f,0.5f,0.0f,1.0f},
+    {-1.0f,0.0f,1.0f,0.5f,0.0f,1.0f}
 };
 
 
@@ -97,6 +109,16 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 
 int main(void)
 {
+    /// Scale shape:
+    float scale = 0.25f;
+    for(int i = 0; i < 48; i++)
+    {
+        vertices[i].x *= scale;
+        vertices[i].y *= scale;
+        vertices[i].z *= scale;
+    }
+
+
     GLFWwindow* window;
     GLuint vertex_buffer, vertex_shader, fragment_shader, program;
     GLint mvp_location, vpos_location, vcol_location;
@@ -151,10 +173,17 @@ int main(void)
                           sizeof(vertices[0]), (void*) 0);
     glEnableVertexAttribArray(vcol_location);
     glVertexAttribPointer(vcol_location, 3, GL_FLOAT, GL_FALSE,
-                          sizeof(vertices[0]), (void*) (sizeof(float) * 2));
+                          sizeof(vertices[0]), (void*) (sizeof(float) * 3));
+    // glEnable(GL_DEPTH_TEST);
 
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
     while (!glfwWindowShouldClose(window))
     {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         float ratio;
         int width, height;
         mat4x4 m, p, mvp;
@@ -163,16 +192,20 @@ int main(void)
         ratio = width / (float) height;
 
         glViewport(0, 0, width, height);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         mat4x4_identity(m);
+        /// Transforms:
+        mat4x4_translate(m,  (float) glfwGetTime() * 0.05f, 0.f, 0.f);
         mat4x4_rotate_X(m, m, (float) glfwGetTime());
+        mat4x4_rotate_Y(m, m, (float) glfwGetTime() / 2.0f);
+
         mat4x4_ortho(p, -ratio, ratio, -1.f, 1.f, 1.f, -1.f);
         mat4x4_mul(mvp, p, m);
 
         glUseProgram(program);
         glUniformMatrix4fv(mvp_location, 1, GL_FALSE, (const GLfloat*) mvp);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glDrawArrays(GL_TRIANGLES, 0, 48);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
