@@ -1,6 +1,5 @@
 #include <glad/glad.h>
 #define GLFW_INCLUDE_NONE
-// #include <GLFW/glfw3.h>
 #include <GLFW/glfw3.h>
 
 #include "linmath.h"
@@ -63,18 +62,6 @@ static struct
     {-1.0f,-1.0f,1.0f,0.5f,0.0f,1.0f},
     {-1.0f,0.0f,1.0f,0.5f,0.0f,1.0f}
 };
-
-
-// static const struct
-// {
-//     float x, y, z;
-//     float r, g, b;
-// } vertices[3] =
-// {
-//     { -0.6f, -0.4f, 0.0f, 1.f, 0.f, 0.f },
-//     {  0.6f, -0.4f, 0.0f, 0.f, 1.f, 0.f },
-//     {   0.f,  0.6f, 0.0f, 0.f, 0.f, 1.f }
-// };
 
 static const char* vertex_shader_text =
 "#version 110\n"
